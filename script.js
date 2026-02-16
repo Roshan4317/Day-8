@@ -1,0 +1,80 @@
+//Reverse a String (Manual Method Only)
+// Input: "javascript"
+// Output: "tpircsavaj" ✨ Use a loop — no .reverse().
+
+// function reverseString(str) {
+//   let reversedString = "";
+
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     reversedString += str[i];
+//   }
+
+//   return reversedString;
+// }
+
+// console.log(reverseString("abcd"));
+
+// *********************************************************************************************************
+
+// Check if a String is a Palindrome
+// Input: "racecar"
+// Output: Palindrome ✨ Compare characters from both ends using two-pointer logic.
+
+// function isPalindrome(str) {
+//   let leftIndex = 0;
+//   let rightIndex = str.length - 1;
+
+//   while (leftIndex < rightIndex) {
+//     if (str[leftIndex] !== str[rightIndex]) return false;
+//     leftIndex++;
+//     rightIndex--;
+//   }
+
+//   return true;
+// }
+
+// console.log(isPalindrome("racecar"));
+
+// *********************************************************************************************************
+
+//3️⃣ Count Frequency of Each Character
+// Input: "banana"
+// Output: { b:1, a:3, n:2 } ✨ Teaches hash maps / JS objects + iteration.
+
+// function countFrequency(str) {
+//   const frequency = {};
+
+//   for (let i = 0; i < str.length; i++) {
+//     frequency[str[i]] = (frequency[str[i]] || 0) + 1;
+//   }
+
+//   return frequency;
+// }
+
+// console.log(countFrequency("banana"));
+
+// *********************************************************************************************************
+
+// 4️⃣ Find the Most Frequent Character in a String
+// Input: "success"
+// Output: Most frequent: s (3 times) ✨ Builds on frequency map — find maximum occurrence.
+
+// function maxFrequencyChar(str) {
+//   const frequency = {};
+//   let maxChar = "";
+//   let maxCharCount = 0;
+
+//   for (let i = 0; i < str.length; i++) {
+//     const char = str[i];
+//     frequency[char] = (frequency[char] || 0) + 1;
+
+//     if (maxCharCount < frequency[char]) {
+//       maxCharCount = frequency[char];
+//       maxChar = char;
+//     }
+//   }
+
+//   return maxChar;
+// }
+
+// console.log(maxFrequencyChar("bannnnanna"));
