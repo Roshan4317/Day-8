@@ -78,3 +78,23 @@
 // }
 
 // console.log(maxFrequencyChar("bannnnanna"));
+
+// *********************************************************************************************************
+
+// 1️⃣ Remove All Duplicate Characters (Keep First Occurrence)
+
+function removeDuplicates(str) {
+  const visited = new Set();
+  let result = "";
+
+  for (let char of str) {
+    if (!visited.has(char)) {
+      visited.add(char);
+      result += char;
+    }
+  }
+
+  return result;
+}
+
+console.log(removeDuplicates("programming"));
