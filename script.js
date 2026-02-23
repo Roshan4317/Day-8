@@ -83,18 +83,40 @@
 
 // 1️⃣ Remove All Duplicate Characters (Keep First Occurrence)
 
-function removeDuplicates(str) {
-  const visited = new Set();
-  let result = "";
+// function removeDuplicates(str) {
+//   const visited = new Set();
+//   let result = "";
+
+//   for (let char of str) {
+//     if (!visited.has(char)) {
+//       visited.add(char);
+//       result += char;
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(removeDuplicates("programming"));
+
+// *********************************************************************************************************
+
+// Count the Number of Words (Manually Without split)
+
+function countWords(str) {
+  let count = 0;
+  let inWord = false;
 
   for (let char of str) {
-    if (!visited.has(char)) {
-      visited.add(char);
-      result += char;
+    if (char !== " " && !inWord) {
+      count++; // starting a new word
+      inWord = true;
+    } else if (char === " ") {
+      inWord = false; // left a word
     }
   }
 
-  return result;
+  return count;
 }
 
-console.log(removeDuplicates("programming"));
+console.log(countWords("  hi   there  world "));
