@@ -103,20 +103,51 @@
 
 // Count the Number of Words (Manually Without split)
 
-function countWords(str) {
-  let count = 0;
-  let inWord = false;
+// function countWords(str) {
+//   let count = 0;
+//   let inWord = false;
 
-  for (let char of str) {
-    if (char !== " " && !inWord) {
-      count++; // starting a new word
-      inWord = true;
-    } else if (char === " ") {
-      inWord = false; // left a word
+//   for (let char of str) {
+//     if (char !== " " && !inWord) {
+//       count++; // starting a new word
+//       inWord = true;
+//     } else if (char === " ") {
+//       inWord = false; // left a word
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(countWords("  hi   there  world "));
+
+// *********************************************************************************************************
+
+
+
+//  Find the Longest Word in a Sentence
+
+function longestWord(str) {
+  let longest = "";
+  let current = "";
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== " ") {
+      current += str[i];
+    } else {
+      if (current.length > longest.length) {
+        longest = current;
+      }
+      current = "";
     }
   }
 
-  return count;
+  
+  if (current.length > longest.length) {
+    longest = current;
+  }
+
+  return longest;
 }
 
-console.log(countWords("  hi   there  world "));
+console.log(longestWord("coding is beautiful"));
